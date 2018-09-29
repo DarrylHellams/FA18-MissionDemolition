@@ -41,20 +41,25 @@ public class Cloud : MonoBehaviour {
 			scale.y *= 1- (Mathf.Abs(offset.x) /sphereOffsetScale.x);
 			scale.y = Mathf.Max (scale.y,scaleYMin);
 			spTrans.localScale = scale; 
-	}
+	    }
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	//	if (Input.GetKeyDown (KeyCode.Space)) {
-	//		Restart ();
-	//	}
+	void Update ()
+    {
+		if (Input.GetKeyDown (KeyCode.Space))
+        {
+			Restart ();
+		}
 	}
-			void Restart () {
-				foreach (GameObject sp in spheres){
-					Destroy(sp);
-				}
-		Start();
+    void Restart ()
+    {
+	    foreach (GameObject sp in spheres)
+        {
+		    Destroy(sp);
+	    }
 
-}
+        Start();
+
+    }
 }
